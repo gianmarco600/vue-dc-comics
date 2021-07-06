@@ -5,27 +5,84 @@
             <div class="menu">
                 <div id="logo"><a href="#"><img src="@/assets/img/dc-logo.png" alt=""></a></div>
                 <div class="nav_menu">
-                    <div class="menu_elem"><a href="#">esargbvwet</a></div>
-                    <div class="menu_elem"><a href="#">esarvgsbg</a></div>
-                    <div class="menu_elem"><a href="#">asdsdfbvsd</a></div>
-                    <div class="menu_elem"><a href="#">aasdagadfg</a></div>
-                    <div class="menu_elem"><a href="#">aasdasd</a></div>
-                    <div class="menu_elem"><a href="#">asdfaa</a></div>
-                    <div class="menu_elem"><a href="#">asdfaa</a></div>
-                    <div class="menu_elem"><a href="#">avasdaf</a></div>
-                    <div class="menu_elem"><a href="#">a vfdas</a></div>
-                    <div class="menu_elem"><a href="#">avsadfgv</a></div>
+                    <div v-for="(link,index) in links" :key="index" class="menu_elem" :class="link.current ? 'active' : ''" :href="link.url"><a :class="link.current ? 'active' : ''" :href="link.url" >{{link.text}}</a></div>
+                    
                 </div>    
             </div>
         </nav>
     </header>
 </template>
 
+
+
+
+
+
 <script>
 export default {
-    name:"Header"
+    name:"Header",
+    data(){
+        return{
+            links:[
+                {
+                    text:'characters',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'comics',
+                    url:'#',
+                    current: true
+                },
+                {
+                    text:'movies',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'tv',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'games',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'collectibles',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'videos',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'fans',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'news',
+                    url:'#',
+                    current: false
+                },
+                {
+                    text:'shop',
+                    url:'#',
+                    current: false
+                }
+            ]
+        }
+    }
 }
 </script>
+
+
+
+
 
 <style lang="scss" scoped>
 @import '@/style/vars.scss';
@@ -52,14 +109,26 @@ header{
                 .menu_elem{
                     height: 100%;
                     display: flex;
+                    flex-direction: column;
                     height: 100px;
-                    align-content: center;
-                    padding: 15px;
-                    
-                    vertical-align: middle;
-                    &:hover{
-                        background-color: aqua;
+                    justify-content: center;
+                    padding: 0 7px;
+                    margin: 0 7px;
+                    box-sizing: content-box;
+                    a{
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        color: black;
+                        display: inline-block;
+
+                        
                     }
+                    &:hover,
+                    &.active{
+                    border-bottom: 5px solid $primary;
+                    color: $primary;
+                    }
+                    
                     
                 }
             }

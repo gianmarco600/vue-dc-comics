@@ -93,15 +93,21 @@ header{
         height: 50px;
     }
     nav{
-        width: 80%;
+        width: 75%;
         margin: 0 auto;
-        padding: 20px;
+        padding: 0px;
 
         .menu{
             display: flex;
             justify-content: space-between;
-            align-content: center;
-
+            align-items: center;
+            #logo{
+                a{
+                    img{
+                        height: 80px;
+                    }
+                }
+            }
             .nav_menu{
                 display: flex;
                 align-content: center;

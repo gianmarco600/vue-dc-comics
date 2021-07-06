@@ -3,7 +3,7 @@
         <div class="top_header"></div>
         <nav>
             <div class="menu">
-                <div id="logo"><a href="#"><img src="@/assets/img/dc-logo.png" alt=""></a></div>
+                <div id="logo"><a href="#"><img src="@/../public/img/dc-logo.png" alt=""></a></div>
                 <div class="nav_menu">
                     <div v-for="(link,index) in links" :key="index" class="menu_elem" :class="link.current ? 'active' : ''" :href="link.url"><a :class="link.current ? 'active' : ''" :href="link.url" >{{link.text}}</a></div>
                     

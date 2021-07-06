@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div v-for="(link,index) in links" :key="index" class="col">
-                    <img :src="link.img" alt="ciao">
+                    <img  :src=' "img/" + link.image' alt="ciao">
                     <h3>{{link.text}}</h3>
                 </div>
             </div>
@@ -19,23 +19,29 @@ export default {
             links:[
                 {
                     text: 'digital comics',
-                    img: '@/assets/img/buy-comics-digital-comics.png' 
+                    image: 'buy-comics-digital-comics.png',
+                    
+
                 },
                 {
-                    text: 'cane',
-                    img: '@/assets/img/buy-comics-merchandise.png' 
+                    text: 'dc merchandise',
+                    image: 'buy-comics-merchandise.png',
+                    
                 },
                 {
-                    text: 'digital comics',
-                    img: '@/assets/img/buy-comics-shop-locator.png' 
+                    text: 'subscription',
+                    image: 'buy-comics-shop-locator.png',
+                     
                 },
                 {
-                    text: 'digital comics',
-                    img: '@/assets/img/buy-comics-subscriptions.png' 
+                    text: 'comic shop locator',
+                    image: 'buy-comics-subscriptions.png',
+                     
                 },
                 {
-                    text: 'digital comics',
-                    img: '@/assets/img/buy-comics-subscriptions.png' 
+                    text: 'dc power visa',
+                    image: 'buy-dc-power-visa.svg',
+                    
                 },
 
             ]
@@ -76,9 +82,10 @@ section{
                 }
                 img{
                     display: block;
-                    height: 40px;
-                    width: 30px;
+                    width: 40px;
                 }
+                
+                
                 
             }
         }

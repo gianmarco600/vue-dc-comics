@@ -1,6 +1,5 @@
 <template>
     <header>
-        <div class="top_header"></div>
         <nav>
             <div class="menu">
                 <div id="logo"><a href="#"><img src="@/assets/img/dc-logo.png" alt=""></a></div>
@@ -88,14 +87,15 @@ export default {
 @import '@/style/vars.scss';
 header{
     width: 100%;
-    .top_header{
-        background-color: $background_dark;
-        height: 50px;
-    }
+    position: fixed;
+    top: 0;
+    z-index: 9999999;
+    background-color: white;
     nav{
         width: 75%;
         margin: 0 auto;
         padding: 0px;
+        
 
         .menu{
             display: flex;

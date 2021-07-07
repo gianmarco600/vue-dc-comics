@@ -1,5 +1,6 @@
 <template>
     <footer>
+        <img class="timbro" src="@/assets/img/dc-logo-bg.png" alt="">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -56,18 +57,8 @@ export default {
     name:'Footer',
     components:{
         Cta
-    },
-    data(){
-        return{
-            
-                
-                
-
-        }
-        }
-        
-
     }
+}
 
 </script>
 
@@ -78,7 +69,15 @@ footer{
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 450px;
+    position: relative;
+    z-index: -2;
+    .timbro{
+        position: absolute;
+        right: 250px;
+        bottom: -50px;
+        z-index: -1;
+    }
     .container{
         width: 75%;
         margin: 0 auto;

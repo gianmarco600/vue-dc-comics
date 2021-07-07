@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div v-for="(link,index) in links" :key="index" class="col">
-                    <img  :src=' "img/" + link.image' alt="ciao">
+                    <img  :src='getImg(link.image)' alt="ciao">
                     <h3>{{link.text}}</h3>
                 </div>
             </div>
@@ -12,39 +12,46 @@
 </template>
 
 <script>
+
 export default {
+
     name:'MenuSection',
     data(){
         return{
             links:[
                 {
                     text: 'digital comics',
-                    image: 'buy-comics-digital-comics.png',
+                    image: 'buy-comics-digital-comics.png'
                     
 
                 },
                 {
                     text: 'dc merchandise',
-                    image: 'buy-comics-merchandise.png',
+                    image: 'buy-comics-merchandise.png'
                     
                 },
                 {
                     text: 'subscription',
-                    image: 'buy-comics-shop-locator.png',
+                    image: 'buy-comics-shop-locator.png'
                      
                 },
                 {
                     text: 'comic shop locator',
-                    image: 'buy-comics-subscriptions.png',
+                    image: 'buy-comics-subscriptions.png'
                      
                 },
                 {
                     text: 'dc power visa',
-                    image: 'buy-dc-power-visa.svg',
+                    image: 'buy-dc-power-visa.svg'
                     
                 },
 
             ]
+        }
+    },
+    methods:{
+        getImg(img){
+            return require('@/assets/img/' + img )
         }
     }
 }
